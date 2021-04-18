@@ -9,7 +9,7 @@ This is spilliams' keymap for Georgi. current version 4.0.1
 escape key again.
 - I also unmapped `STN_PWR`, so I could use it for my own layers.
 
-# Changelog
+## Changelog
 
 - 4.0.1: changed the symbol layers to overlap less with the Single Stroke Commands dictionary, and to have more keyboard shortcuts up front.
 Also the top left key turns into a `TO(L0)` in case you need to manually return to the base layer.

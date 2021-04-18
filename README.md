@@ -1,6 +1,6 @@
 # Keyboards
 
-Here are all my custom qmk firmwares.
+Here are all my custom qmk firmwares for my keyboards.
 
 Copy these into [`qmk_firmware`](https://github.com/qmk/qmk_firmware) (or [`germ/qmk_firmware`](https://github.com/germ/qmk_firmware) for the Georgi/Butterstick) to apply them.
 
