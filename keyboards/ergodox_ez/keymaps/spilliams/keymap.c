@@ -66,7 +66,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     *   | LCtrl|(SYMB)|      | LGui | LAlt |                                       | Left | Down |  Up  | Right| RCtrl|
     *   `----------------------------------'                                       `----------------------------------'
     *                                        ,-------------.       ,-------------.
-    *                                        |  F1  |  F5  |       |  F9  | F12  |
+    *                                        |  F1  |  F12 |       |  F5  |  F9  |
     *                                 ,------|------|------|       |------+--------+------.
     *                                 |Back- |      | Home |       | PgUp |        |      |
     *                                 | space| Del  |------|       |------| Enter  |Space |
@@ -79,7 +79,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,  KC_A,     KC_S,  KC_D,    KC_F,    KC_G,                         KC_H,    KC_J,    KC_K,    KC_L,   KC_SCLN,  KC_QUOT,
     KC_LSFT, KC_Z,     KC_X,  KC_C,    KC_V,    KC_B,     _______,  TG(SYMB), KC_N,    KC_M,    KC_COMM, KC_DOT, KC_SLSH,  KC_RSFT,
     KC_LCTL, MO(SYMB), KC_NO, KC_LGUI, KC_LALT,                                        KC_LEFT, KC_DOWN, KC_UP,  KC_RIGHT, KC_RCTL,
-                                                  KC_F1,    KC_F5,  KC_F9,    KC_F12,
+                                                  KC_F1,   KC_F12,  KC_F5,    KC_F9,
                                                           KC_HOME,  KC_PGUP,
                                         KC_BSPC, KC_DEL,   KC_END,  KC_PGDN, KC_ENT, KC_SPC
     ),
@@ -128,9 +128,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     *   |       |      |      | LAlt | Space|                                       |      |      |      |      |      |
     *   `-----------------------------------'                                       `----------------------------------'
     *                                        ,-------------.       ,-------------.
-    *                                        |  I   |  L   |       | LGui |      |
+    *                                        |  I   |  L   |       |  F5  |  F9  |
     *                                 ,------|------|------|       |------+------+------.
-    *                                 |      |      |  N   |       |      |      |      |
+    *                                 |      |      |  N   |       | LGui |      |      |
     *                                 | Space| Down |------|       |------|      |      |
     *                                 |      |      |  M   |       |      |      |      |
     *                                 `--------------------'       `--------------------'
@@ -141,8 +141,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, _______, _______, _______, _______,                       _______, _______, _______, _______, _______, _______,
     _______, _______, _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______, _______, _______,
     _______, _______, _______, KC_LALT, KC_SPC,                                          _______, _______, _______, _______, _______,
-                                                 KC_I,    KC_L,        KC_LGUI, _______,
-                                                          KC_N,        _______,
+                                                 KC_I,    KC_L,        KC_TRNS, KC_TRNS,
+                                                          KC_N,        KC_LGUI,
                                         KC_SPC, KC_DOWN,  KC_M,        _______, _______, _______
     ),
     /* Symbol Layer
