@@ -1,0 +1,3 @@
+DEFAULT_FOLDER = crkbd/rev1
+
+EXTRA_KEY_ENABLE = yes
