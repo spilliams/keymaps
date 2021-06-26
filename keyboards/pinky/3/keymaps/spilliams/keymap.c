@@ -4,8 +4,8 @@ enum layer_names {
   BASE,
   RAISE,
   MORE
-}
- 
+};
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [BASE] = LAYOUT_split_3x7_4(
     KC_ESC , KC_Q   , KC_W   , KC_E   , KC_R   , KC_T   , KC_HOME  ,      KC_PGUP, KC_Y   , KC_U   , KC_I   , KC_O   , KC_P   , KC_BSLS,
