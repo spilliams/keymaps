@@ -63,77 +63,100 @@
 
 enum sofle_layers {
     BASE,
+    GAME,
     SUPE,
     HYPE,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*
- * QWERTY
+ * Base layer
  * Encoders do Home/End and PgUp/PgDn
  * ,-----------------------------------------.                    ,-----------------------------------------.
- * | ESC  |   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  |  []  |
+ * | ESC  |   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  |   -  |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * |  `   |   Q  |   W  |   E  |   R  |   T  |                    |   Y  |   U  |   I  |   O  |   P  |   \  |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * | Tab  |   A  |   S  |   D  |   F  |   G  |-------.    ,-------|   H  |   J  |   K  |   L  |   ;  |  '   |
  * |------+------+------+------+------+------| Play  |    | Mute  |------+------+------+------+------+------|
- * |LShift|   Z  |   X  |   C  |   V  |   B  |-------|    |-------|   N  |   M  |   ,  |   .  |   /  |RShift|
+ * | LSft |   Z  |   X  |   C  |   V  |   B  |-------|    |-------|   N  |   M  |   ,  |   .  |   /  | RSft |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
  *            | LCtl | LAlt | SUPE | Bspc | /  Del  /       \ Ret  \  | Spc  | SUPE | GUI  | RCtl |
- *            |      |      |      |      |/       /         \      \ |      |      |      |      |
- *            `----------------------------------'           '------''---------------------------'
+ *            `------------------------------------'         '------''----------------------------'
  */
-
 [BASE] = LAYOUT( \
     KC_ESC,   KC_1,   KC_2,    KC_3,    KC_4,    KC_5,                     KC_6,    KC_7,    KC_8,    KC_9,    KC_0,  KC_MINS, \
     KC_GRV,   KC_Q,   KC_W,    KC_E,    KC_R,    KC_T,                     KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,  KC_BSLS, \
     KC_TAB,   KC_A,   KC_S,    KC_D,    KC_F,    KC_G,                     KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN,  KC_QUOT, \
-    KC_LSFT,  KC_Z,   KC_X,    KC_C,    KC_V,    KC_B, KC_MPLY,   KC_MUTE, KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,  KC_RSFT, \
+    KC_LSFT,  KC_Z,   KC_X,    KC_C,    KC_V,    KC_B, KC_MPLY,  KC_MUTE, KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,  KC_RSFT, \
                 KC_LCTL,  KC_LALT,  MO(SUPE), KC_BSPC,  KC_DEL,    KC_ENT,   KC_SPC, MO(SUPE), KC_LGUI,  KC_RCTL \
 ),
-/*
- * Symbols
- * ,-----------------------------------------.                    ,-----------------------------------------.
- * | ---- |      |      |      |      |  =   |                    |   -  |      |      |      |      |      |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | ---- |      |      |  {   |  }   |      |                    |      |      |      |      |      |      |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | ---- |      |      |  (   |  )   |      |-------.    ,-------|  <-  |  ^^  |  vv  |  ->  |      |      |
- * |------+------+------+------+------+------| ----  |    | ----  |------+------+------+------+------+------|
- * | ---- |      |      |  [   |  ]   |      |-------|    |-------|      |      |      |      |      | ---- |
- * `-----------------------------------------/       /     \      \-----------------------------------------'
- *            | ____ | ____ | HYPE | ____ | / ____  /       \ ____ \  | ____ | HYPE | ____ | ____ |
- *            |      |      |      |      |/       /         \      \ |      |      |      |      |
- *            `----------------------------------'           '------''---------------------------'
- */
 
+/*
+ * Gaming layer
+ * Encoders do "I"/"L" and volume up/down
+ * ,-----------------------------------------.                    ,-----------------------------------------.
+ * |      |      |      |      |      |      |                    |      |      |      |      |      |      |
+ * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
+ * |      |      |      |      |      |      |                    |      |      |      |      |      |      |
+ * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
+ * |      |      |      |      |      |      |-------.    ,-------|      |      |      |      |      |      |
+ * |------+------+------+------+------+------|       |    |       |------+------+------+------+------+------|
+ * |      |      |      |      |      |      |-------|    |-------|      |      |      |      |      |      |
+ * `-----------------------------------------/       /     \      \-----------------------------------------'
+ *            |      |      |      | Spc  | /  Ret  /       \      \  |      |      |      |      |
+ *            `------------------------------------'         '------''----------------------------'
+ */
+[GAME] = LAYOUT( \
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, \
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, \
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, \
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, \
+                KC_TRNS,  KC_TRNS,  KC_TRNS,   KC_SPC,   KC_ENT,       KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS \
+),
+
+/*
+ * Super layer
+ * Encoders do media prev/next and volume up/down
+ * ,-----------------------------------------.                    ,-----------------------------------------.
+ * |      | xxxx | xxxx | xxxx | xxxx | xxxx |                    | xxxx | xxxx | xxxx | xxxx | xxxx |  =   |
+ * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
+ * |      | xxxx | xxxx |  {   |  }   | xxxx |                    | xxxx | xxxx | xxxx | xxxx | xxxx | xxxx |
+ * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
+ * |      | xxxx | xxxx |  (   |  )   | xxxx |-------.    ,-------|  <-  |  ^^  |  vv  |  ->  | xxxx | xxxx |
+ * |------+------+------+------+------+------| Play  |    | Mute  |------+------+------+------+------+------|
+ * |      | xxxx | xxxx |  [   |  ]   | xxxx |-------|    |-------| xxxx | xxxx | xxxx | xxxx | xxxx |      |
+ * `-----------------------------------------/       /     \      \-----------------------------------------'
+ *            |      |      | HYPE |      | /       /       \      \  |      | HYPE |      |      |
+ *            `------------------------------------'         '------''----------------------------'
+ */
 [SUPE] = LAYOUT( \
-    KC_TRNS, KC_NO,  KC_NO,  KC_NO,   KC_NO,    KC_EQL,                   KC_MINS,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_EQL, \
+    KC_TRNS, KC_NO,  KC_NO,  KC_NO,   KC_NO,    KC_NO,                      KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_EQL, \
     KC_TRNS, KC_NO,  KC_NO,  KC_LCBR, KC_RCBR,  KC_NO,                      KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO, \
     KC_TRNS, KC_NO,  KC_NO,  KC_LPRN, KC_RPRN,  KC_NO,                      KC_LEFT,KC_DOWN,KC_UP,KC_RIGHT, KC_NO,  KC_NO, \
-    KC_TRNS, KC_NO,  KC_NO,  KC_LBRC, KC_RBRC,  KC_NO, KC_TRNS,   KC_TRNS,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_TRNS, \
+    KC_TRNS, KC_NO,  KC_NO,  KC_LBRC, KC_RBRC,  KC_NO, KC_MPLY,   KC_MUTE,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_TRNS, \
                KC_TRNS,  KC_TRNS,  MO(HYPE), KC_TRNS, KC_TRNS,      KC_TRNS,  KC_TRNS, MO(HYPE), KC_TRNS, KC_TRNS \
 ),
-/* Hyper
+
+/* Hyper layer
+ * Encoders are the same as Super
  * ,-----------------------------------------.                    ,-----------------------------------------.
  * | SLEEP|  F1  |  F2  |  F3  |  F4  |  F5  |                    |  F6  |  F7  |  F8  |  F9  | F10  | F11  |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | ---- |      |      |      |      |      |                    |      |      |      |      |      | F12  |
+ * |      | xxxx | xxxx | xxxx | xxxx | xxxx |                    | xxxx | xxxx | xxxx | xxxx | xxxx | F12  |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | ---- |      |      |      |      |      |-------.    ,-------|      |      |      |      |      |      |
- * |------+------+------+------+------+------|       |    |       |------+------+------+------+------+------|
- * | ---- |      |      |      |      |      |-------|    |-------|      |      |      |      |      | ---- |
+ * |      | xxxx | xxxx | xxxx | xxxx | xxxx |-------.    ,-------| xxxx | xxxx | xxxx | xxxx | xxxx | xxxx |
+ * |------+------+------+------+------+------| GAME  |    | xxxx  |------+------+------+------+------+------|
+ * |      | xxxx | xxxx | xxxx | xxxx | xxxx |-------|    |-------| xxxx | xxxx | xxxx | xxxx | xxxx |      |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *            | ____ | ____ | ____ | ____ | / ____  /       \ ____ \  | ____ | ____ | ____ | ____ |
- *            |      |      |      |      |/       /         \      \ |      |      |      |      |
- *            `----------------------------------'           '------''---------------------------'
+ *            |      |      |      |      | /       /       \      \  |      |      |      |      |
+ *            `------------------------------------'         '------''----------------------------'
  */
 [HYPE] = LAYOUT( \
     KC_SLEP,  KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,                       KC_F6,  KC_F7,  KC_F8,  KC_F9,  KC_F10, KC_F11,\
     KC_TRNS,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,                       KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_F12, \
     KC_TRNS,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,                       KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO, \
-    KC_TRNS,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,       KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_TRNS, \
+    KC_TRNS,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO, TG(GAME),    KC_NO,   KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_TRNS, \
                 KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS\
 )
 };
@@ -207,17 +230,19 @@ static void print_status_narrow(void) {
     // Print current mode
     oled_write_P(PSTR("\n\n"), false);
 
-    // snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Undef-%ld", layer_state)
-
     switch (get_highest_layer(layer_state)) {
         case BASE:
-            oled_write_P(PSTR("Base\n"), false);
+            // intentionally left blank
+            oled_write_P(PSTR("\n"), false);
+            break;
+        case GAME:
+            oled_write_P(PSTR("GAME\n"), false);
             break;
         case SUPE:
             oled_write_P(PSTR("SUPER\n"), false);
             break;
         case HYPE:
-            oled_write_P(PSTR("~HyPeR~\n"), false);
+            oled_write_P(PSTR("HyPeR\n"), false);
             break;
         default:
             oled_write_ln_P(PSTR("Undef"), false);
@@ -311,6 +336,21 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
                     tap_code(KC_PGDOWN);
                 } else {
                     tap_code(KC_PGUP);
+                }
+            }
+            break;
+        case GAME:
+            if (index == 0) {
+                if (clockwise) {
+                    tap_code(KC_L);
+                } else {
+                    tap_code(KC_I);
+                }
+            } else if (index == 1) {
+                if (clockwise) {
+                    tap_code(KC_VOLU);
+                } else {
+                    tap_code(KC_VOLD);
                 }
             }
             break;
