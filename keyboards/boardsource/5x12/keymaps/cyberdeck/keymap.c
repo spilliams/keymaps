@@ -3,16 +3,10 @@
 enum layers {
     _MAIN,
     _SUPER,
-    // _HYPER,
 };
 
 // Readability keycodes
 #define SUPER   MO(_SUPER)
-// #define HYPER   MO(_HYPER)
-#define KC_LCBC S(KC_LBRC)
-#define KC_RCBC S(KC_RBRC)
-#define KC_LPRN S(KC_9)
-#define KC_RPRN S(KC_0)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -26,10 +20,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   
   [_SUPER] = LAYOUT_ortho_5x12(
   KC_SLEP, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_EQL,
-  _______, _______, _______, KC_LCBC, KC_RCBC, _______, _______, _______, _______, KC_F11,  KC_F12,  _______,
+  _______, _______, _______, KC_LCBR, KC_RCBR, _______, _______, _______, _______, KC_F11,  KC_F12,  _______,
   _______, _______, _______, KC_LPRN, KC_RPRN, _______, _______, _______, _______, _______, _______, _______,
   KC_TRNS, _______, _______, KC_LBRC, KC_RBRC, _______, _______, _______, _______, KC_MUTE, KC_MPLY, _______,
-  KC_TRNS, KC_TRNS, KC_TRNS, _______, _______, _______, _______, _______, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT,
-  ),
+  KC_TRNS, KC_TRNS, KC_TRNS, _______, _______, _______, _______, _______, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT
+  )
 
 };
