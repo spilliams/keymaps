@@ -7,7 +7,7 @@ FORCE_NKRO = yes
 
 # from georgi/spilliams
 #Firmware reduction options
-MOUSEKEY_ENABLE			 = no   # 1500 bytes
+MOUSEKEY_ENABLE			 = yes   # 1500 bytes
 # NO_TAPPING				 = no   # this also enables OSL, for some reason
 # NO_PRINT				 = yes
 
