@@ -1,7 +1,7 @@
 #include QMK_KEYBOARD_H
 #include "version.h"
 #include "action_layer.h"
-#include "keymap_steno.h"
+// #include "keymap_steno.h"
 
 enum layers {
     // STEN, // gotta type fast
@@ -162,9 +162,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     *                                        ,-------------.       ,-------------.
     *                                        |      |      |       |      |      |
     *                                 ,------|------|------|       |------+------+------.
-    *                                 |      |      |      |       |MWhUp | www  | www  |
+    *                                 |      |      |      |       |      | www  | www  |
     *                                 |      |      |------|       |------| Back |  Fwd |
-    *                                 |      |      |      |       |MWhDn |      |      |
+    *                                 |      |      |      |       |      |      |      |
     *                                 `--------------------'       `--------------------'
     */
     [SYMB] = LAYOUT_ergodox_pretty(
@@ -174,8 +174,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_WAKE, KC_PERC, KC_CIRC, KC_LBRC, KC_RBRC, KC_TILD, _______,     _______, _______, _______, KC_MUTE, KC_MPLY, _______, _______,
     _______, KC_TRNS, _______, _______, _______,                                         KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, _______,
                                                  _______, _______,     _______, _______,
-                                                          _______,     KC_WH_U,
-                                        _______, _______, _______,     KC_WH_D, KC_WBAK, KC_WFWD
+                                                          _______,     _______,
+                                        _______, _______, _______,     _______, KC_WBAK, KC_WFWD
     ),
     /* Mouse Layer (blank keys are transparent to lower layers)
     *
@@ -193,9 +193,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     *                                        ,-------------.       ,-------------.
     *                                        |Mouse3|Mouse4|       |Mouse5|Mouse6|
     *                                 ,------|------|------|       |------+------+------.
-    *                                 |      |      |MsWh L|       |MsWhUp|      |      |
+    *                                 |      |      |MsWh U|       |MsWh L|      |      |
     *                                 |      |      |------|       |------|      |      |
-    *                                 |Mouse1|Mouse2|MsWh R|       |MsWhDn|Mouse1|Mouse2|
+    *                                 |Mouse1|Mouse2|MsWh D|       |MsWh R|Mouse1|Mouse2|
     *                                 `--------------------'       `--------------------'
     */
     [MOUS] = LAYOUT_ergodox_pretty(
@@ -205,8 +205,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______, _______, _______,
     _______, _______, KC_TRNS, _______, _______,                                         KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, _______,
                                                  KC_BTN3, KC_BTN4,     KC_BTN5, KC_BTN6,
-                                                          KC_WH_L,     KC_WH_U,
-                                        KC_BTN1, KC_BTN2, KC_WH_R,     KC_WH_D, KC_BTN1, KC_BTN2
+                                                          KC_WH_U,     KC_WH_L,
+                                        KC_BTN1, KC_BTN2, KC_WH_D,     KC_WH_R, KC_BTN1, KC_BTN2
     ),
 };
 
